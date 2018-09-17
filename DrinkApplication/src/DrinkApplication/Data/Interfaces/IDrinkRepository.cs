@@ -6,8 +6,8 @@ namespace DrinkApplication.Data.Interfaces
 {
     public interface IDrinkRepository
     {
-       IEnumerable<Drink> Drinks { get; set; }
-        IEnumerable<Drink> PreferrencesDrinks { get; set; }
+       IEnumerable<Drink> Drinks { get; }
+        IEnumerable<Drink> PreferrencesDrinks { get; }
         Drink GetDrinkById(int drinkId);
 
     }
