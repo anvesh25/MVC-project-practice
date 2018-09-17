@@ -1,0 +1,12 @@
+.json file where all the launch configuration can be done here
+
+wwwroot folder all the static file will be stored like HTML, JavaScript, CSS and Images as well.
+
+Progran.cs file we have static main method and inside this we define our host configuration.
+whats could be the startup file of the project, which actually is a extension method, this extension methos will actually define the class it will be used srart-up the application.
+
+Project.json - is used to define the references of the project
+
+Startup.cs - is well known as configurations class, we need to configure work are going to use all the products. For example we can configure routing, logging  and our services etc..
+
+Web.config - which is required when host the application in IIS or IIS express 
