@@ -16,6 +16,8 @@ namespace DrinkApplication
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //Configuring MVC service
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -23,15 +25,35 @@ namespace DrinkApplication
         {
             loggerFactory.AddConsole();
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseDeveloperExceptionPage(); //is used to render the exception during their development mode.
+            app.UseStatusCodePages();   //Is used to show the error pages for HTTP status code
+            app.UseStaticFiles();   //Is used to add support to over application, so we can use the static file
+            app.UseMvcWithDefaultRoute();
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+
+            //Development environment
+            //if (env.IsDevelopment())
+            //{
+            //    //app.UseDeveloperExceptionPage();
+            //    app.Run(async (context) =>
+            //    {
+            //        await context.Response.WriteAsync("IsDevelopment");
+            //    });
+            //}
+            ////Setting Production environment
+            //if (env.IsProduction())
+            //{
+            //    //app.UseDeveloperExceptionPage();
+            //    app.Run(async (context) =>
+            //    {
+            //        await context.Response.WriteAsync("IsProduction");
+            //    });
+            //}
+
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
         }
     }
 }

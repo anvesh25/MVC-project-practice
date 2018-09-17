@@ -10,3 +10,40 @@ Project.json - is used to define the references of the project
 Startup.cs - is well known as configurations class, we need to configure work are going to use all the products. For example we can configure routing, logging  and our services etc..
 
 Web.config - which is required when host the application in IIS or IIS express 
+
+IHostingEnvironment - is the service which provides the core abstraction for with the environment. 
+
+To check which environment we are working in project:
+
+Goto project -> right click -> Properties -> Debug -> Environment Variables -> value.
+
+Development - Should be used when we are developing an application
+
+Production - Should be used when we actully deploy/publish the application
+
+The Razor.Tools contains the dotnet-razor-tooling command used to resolve TagHelperDescriptors for Projects at design time.
+
+The purpose of ConfigureServices method is to cnfigure the panis injuction and the panis injection ia the previous versions of dotnet was optional
+In Asp.netCore it is integrated, so when an applicaton starts up, types like a class and register in the container.
+In the panis injuction turns this types are called services. Once they are registered other types can ask the container for instance of that type.
+During registration you can determine what the life time should be this
+
+What is MVC in .Net Core?
+Model - View - Controller
+Design pattern
+Clear saperation of logic: Model, View, Controller
+Testable and Maintanable
+
+What is a Model?
+Contains the data the user works with.
+Is referred to as the model logic
+Classes we will create will represent the models we are going to work with
+Amodel is always interacts with a controller.
+
+What is a controller?
+Connect the model with the view.
+The provide the logic that works on the data model and the results are displayed on the view.
+
+What is a View?
+Will display the data to the user.
+The controllers are generally trigger from the views and the Views are typically created from the model data.
